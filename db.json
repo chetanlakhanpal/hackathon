@@ -1,0 +1,94 @@
+{
+    "users": [ 
+        { 
+        "id":"32324",
+        "first_name":"Rohan",
+        "last_name":"Kumar",
+        "age":23,
+        "email":"dsgshd@jdskjd.ds",
+        "credit_score":567,
+        "salary":800000,
+        "bank_account":"7683682327368",
+        "phone_no":null
+        },
+        { 
+        "id":"32325",
+        "first_name":"Ranjeet",
+        "last_name":"Kumar",
+        "age":25,
+        "email":"ranjdskjks@skdj.dsd",
+        "credit_score":787,
+        "salary":900000,
+        "bank_account":"3275765348253",
+        "phone_no":null
+        },
+        { 
+        "id":"32326",
+        "first_name":"Rahul",
+        "last_name":"Kumar",
+        "age":29,
+        "email":"dshkdsj@djksd.ds",
+        "credit_score":700,
+        "salary":800000,
+        "bank_account":"3283672683628",
+        "phone_no":null
+        },
+        { 
+        "id":"32327",
+        "first_name":"Priya",
+        "last_name":"Kumari",
+        "age":20,
+        "email":"dskks@dksd.ff",
+        "credit_score":800,
+        "salary":100000,
+        "bank_account":"2367435837444",
+        "phone_no":null
+        },
+        { 
+        "id":"32328",
+        "first_name":"Pooja",
+        "last_name":"Kumari",
+        "age":30,
+        "email":"dsjkjfd@djskd.dds",
+        "credit_score":900,
+        "salary":1000000,
+        "bank_account":"3749873894834",
+        "phone_no":null
+        },
+        { 
+        "id":"32329",
+        "first_name":"Tim",
+        "last_name":"Sharma",
+        "age":35,
+        "email":"shdjsd@jdkskd.dsd",
+        "credit_score":600,
+        "salary":2000000,
+        "bank_account":"7328348673444",
+        "phone_no":null
+        },
+        { 
+        "id":"32331",
+        "first_name":"Hom",
+        "last_name":"Eli",
+        "age":45,
+        "email":"dhskdks@djsjd.dsd",
+        "credit_score":780,
+        "salary":3000000,
+        "bank_account":"3279734463487",
+        "phone_no":null
+        }],
+    "usersDetails": {
+        "1": {
+            "id": 1,
+            "name": "abc",
+            "cibil": 300,
+            "annualIncome": 300000,
+            "pan": "ABCS1234"
+        }
+    },
+    "getstatuscounts": {
+        "IN_PROGRESS": 15,
+        "APPROVED": 30,
+        "REJECTED": 40
+    }
+}
