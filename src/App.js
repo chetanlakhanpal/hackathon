@@ -13,9 +13,7 @@ class App extends Component {
       CUSTOMER_ID: "",
       CUSTOMER_NAME: "",
       users: [],
-      graphData: {
-
-      }
+      graphData: {}
     }
   }
 
@@ -40,7 +38,7 @@ class App extends Component {
   componentDidMount() {
     const google = window.google
     google.charts.load('current', {'packages':['corechart']});
-
+    
     fetch(`${DOMAIN}/getstatuscounts`)
     .then(value => value.json())
     .then(data => {
@@ -52,7 +50,6 @@ class App extends Component {
   }
 
   onCustomerIDChange = (value) => {
-    console.log(this.state)
     this.setState((state) => ({
       ...state,
       "CUSTOMER_ID": value,
@@ -71,12 +68,19 @@ class App extends Component {
   onDisplayUsersClick = () => {
     const _DOMAIN = `${DOMAIN}/users/`
 
-    const URL = this.state.CUSTOMER_ID.length == 0 ? ('name/' + this.state.CUSTOMER_NAME) : ('id/' + this.state.CUSTOMER_ID) ;
+    const notCustomerID = this.state.CUSTOMER_ID.length == 0
+
+    const URL =  notCustomerID ? ('name/' + this.state.CUSTOMER_NAME) : ('id/' + this.state.CUSTOMER_ID) ;
 
     fetch(`${_DOMAIN}${URL}`)
     .then(value => value.json())
     .catch(e => { console.error(e)})
-    .then(data => { console.log(data) })
+    .then(data => { 
+      this.setState(state => ({
+        ...state,
+        users: notCustomerID ? data : [data]
+      }))
+     })
   }
 
   render() {
@@ -84,10 +88,10 @@ class App extends Component {
       <div className="App">
         <Header />
         <main className="container">
-        <div id="piechart" style={{width: "700px", height: "500px"}}></div>
+        <div id="piechart" style={{width: "100%", height: "500px"}}></div>
           <CustomerInput customerName={this.state.CUSTOMER_NAME} customerId={this.state.CUSTOMER_ID} onCustomerIDChange={this.onCustomerIDChange} onCustomerNameChange={this.onCustomerNameChange} 
           onDisplayUsersClick={this.onDisplayUsersClick}/>
-          <DataTable data={this.state.graphData}/>
+          <DataTable users={this.state.users}/>
         </main>
       </div>
     );
